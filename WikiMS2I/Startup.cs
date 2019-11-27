@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WikiMS2I.Extensions;
 
 namespace WikiMS2I
 {
@@ -24,6 +25,7 @@ namespace WikiMS2I
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.ConfigureSqlServerContext(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
