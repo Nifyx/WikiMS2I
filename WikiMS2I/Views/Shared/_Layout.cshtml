@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WikiMS2I</title>
+    <link rel="stylesheet" href="~/lib/semantic/dist/css/semantic.min.css" />
+    <link rel="stylesheet" href="~/css/semantic.css" />
+    <style>
+        #yammerSticky{
+            margin-left:30px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui left sidebar menu visible vertical fixed">
+        <div class="item">
+            <img class="ui tiny image" src="/logo_ENI.png">
+        </div>
+        <a class="item">Features</a>
+        <a class="item">Testimonials</a>
+        <a class="item">Sign-in</a>
+    </div>
+
+    <p></p>
+    <p></p>
+
+    <div class="pusher dimmed">
+        <div id="yammerSticky" class="ui segment container">
+            @RenderBody()
+            <hr />
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019a - WikiMS2I - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/semantic/dist/js/semantic.min.js"></script>
+    <script src="~/js/script.js"></script>
+    <script src="~/js/semantic.js" asp-append-version="true"></script>
+
+    <script type="text/javascript" src="https://s0-azure.assets-yammer.com/assets/platform_embed.js"></script>
+    <script type="text/javascript">
+        yam.connect.embedFeed({
+            container: "#embedded-feed",
+            network: "campus-eni.fr",
+            feedType: "group",
+            feedId: "10345398272"
+        });
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
